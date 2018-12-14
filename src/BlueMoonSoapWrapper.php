@@ -30,7 +30,7 @@ class BlueMoonSoapWrapper
 
 	private $library;
 
-	public function __construct($clientUrl = null, $clientUsername = null, $clientPassword = null, $clientSerial = null) {
+	public function __construct($clientSerial = null, $clientUrl = null, $clientUsername = null, $clientPassword = null) {
 
 		$this->clientUrl = $clientUrl ?: config('bluemoon.soap.url');
 		$this->clientUsername = $clientUsername ?: config('bluemoon.soap.username');
