@@ -22,6 +22,10 @@ class BlueMoonSoapWrapperServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
+
+        $this->publishes([
+            __DIR__ . '../config/bluemoon.php' => config_path('bluemoon.php'),
+        ]);
     }
 
     /**
