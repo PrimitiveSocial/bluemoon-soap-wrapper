@@ -1,6 +1,6 @@
 {
     "name": "primitivesocial/bluemoonsoapwrapper",
-    "description": ":description",
+    "description": "Bluemoon SOAP wrapper for Laravel",
     "license": "license",
     "authors": [
         {
