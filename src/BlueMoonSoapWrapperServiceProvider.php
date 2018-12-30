@@ -35,7 +35,7 @@ class BlueMoonSoapWrapperServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/bluemoonsoapwrapper.php', 'bluemoonsoapwrapper');
+        $this->mergeConfigFrom(__DIR__.'/../config/bluemoon.php', 'bluemoon');
 
         // Register the service the package provides.
         $this->app->singleton('bluemoonsoapwrapper', function ($app) {
