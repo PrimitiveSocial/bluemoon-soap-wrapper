@@ -24,7 +24,7 @@ class BlueMoonSoapWrapperServiceProvider extends ServiceProvider
         }
 
         $this->publishes([
-            __DIR__ . '../config/bluemoon.php' => config_path('bluemoon.php'),
+            __DIR__ . '/../config/bluemoon.php' => config_path('bluemoon.php'),
         ]);
     }
 
