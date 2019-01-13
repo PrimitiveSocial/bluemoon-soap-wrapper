@@ -66,8 +66,10 @@ class BlueMoonSoapWrapper
 		} catch (\Exception $e) {
 
 			$result = array(
-				'error' => $e->getMessage(),
-				'request' => $this->client->getLastRequest()
+				'error' 	=> $e->getMessage(),
+				'request'	=> $this->client->getLastRequest(),
+				'response'	=> $this->client->getLastResponse(),
+				'wsdl'		=> $this->client->getWSDL()
 			);
 
 		}
