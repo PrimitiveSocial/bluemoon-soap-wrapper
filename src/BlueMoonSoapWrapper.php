@@ -16,8 +16,6 @@ class BlueMoonSoapWrapper
 
 	protected $clientSerial;
 
-	protected $token;
-
 	protected $selectedMethod;
 
 	protected $selectedFunction;
@@ -29,6 +27,8 @@ class BlueMoonSoapWrapper
 	private $sendData;
 
 	private $library;
+
+	public $token;
 
 	public function __construct($clientSerial = null, $clientUrl = null, $clientUsername = null, $clientPassword = null) {
 
@@ -52,12 +52,22 @@ class BlueMoonSoapWrapper
 		$this->token = $this->login();
 
 		// Create data object with Session ID
-		$this->inData = array_merge(
-			array(
-				'SessionId' => $this->token
-			),
-			$data
-		);
+		if($this->inData instanceof \SimpleXMLElement) {
+
+			$$this->inData->addChild('SessionId', $this->token);
+
+		}
+
+		if(is_array($this->inData)) {
+
+			$this->inData = array_merge(
+				array(
+					'SessionId' => $this->token
+				),
+				$data
+			);
+
+		}
 
 		try {
 
