@@ -52,22 +52,12 @@ class BlueMoonSoapWrapper
 		$this->token = $this->login();
 
 		// Create data object with Session ID
-		if($this->inData instanceof \SimpleXMLElement) {
-
-			$$this->inData->addChild('SessionId', $this->token);
-
-		}
-
-		if(is_array($this->inData)) {
-
-			$this->inData = array_merge(
-				array(
-					'SessionId' => $this->token
-				),
-				$data
-			);
-
-		}
+		$this->inData = array_merge(
+			array(
+				'SessionId' => $this->token
+			),
+			$data
+		);
 
 		try {
 
